@@ -20,11 +20,8 @@ FlyCation is a mobile application for flight ticket booking that provides users 
 ![Detail Booking Screen](assets/detail_booking.jpg)
 
 ### Installation
-1. Clone this repository:
-   git clone https://github.com/username/FlyCation.git
-
+1. Clone this repository
 2. Open the project in your preferred IDE.
-
 3. Run the following commands:
    flutter pub get
    flutter run
