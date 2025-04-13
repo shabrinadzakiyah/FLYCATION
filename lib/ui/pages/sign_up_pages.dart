@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flycation/services/user_services.dart';
 import 'package:flycation/ui/pages/widgets/custom_button.dart';
 import 'package:flycation/ui/pages/widgets/custom_text_form_field.dart';
 import '../../shared/theme.dart';
 
 class SignUpPage extends StatelessWidget {
-  const SignUpPage({super.key});
+  SignUpPage({super.key});
+
+  UserServices userServices = UserServices();
+
+  TextEditingController nameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordContoller = TextEditingController();
+  TextEditingController ageController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +32,7 @@ class SignUpPage extends StatelessWidget {
     Widget inputSection() {
       Widget nameInput() {
         return CustomTextFormField(
+          controller: nameController,
           title: 'Full Name',
           hintText: 'Your Legal Name',
         );
@@ -31,6 +40,7 @@ class SignUpPage extends StatelessWidget {
 
       Widget emailInput() {
         return CustomTextFormField(
+          controller: emailController,
           title: 'Email Address',
           hintText: 'Your Email Adress',
         );
@@ -38,6 +48,7 @@ class SignUpPage extends StatelessWidget {
 
       Widget passwordInput() {
         return CustomTextFormField(
+          controller: passwordContoller,
           title: 'Password',
           hintText: 'Enter Password',
           obsecureText: true,
@@ -46,6 +57,7 @@ class SignUpPage extends StatelessWidget {
 
       Widget ageInput() {
         return CustomTextFormField(
+          controller: ageController,
           title: 'Age',
           hintText: 'Your Age',
         );
@@ -53,9 +65,23 @@ class SignUpPage extends StatelessWidget {
 
       Widget submitButton() {
         return CustomButton(
-          title: 'Get Started',
-          onPressed: () {
-            Navigator.pushNamed(context, '/bonus');
+          title: 'Sign Up',
+          onPressed: () async {
+            ResponseUserService response = await userServices.register(
+                nameController.text,
+                ageController.text,
+                emailController.text,
+                passwordContoller.text);
+            if (response.isSuccess) {
+              Navigator.pushNamed(context, '/bonus');
+            } else {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(response.message),
+                  duration: Duration(seconds: 2),
+                ),
+              );
+            }
           },
         );
       }
@@ -77,6 +103,17 @@ class SignUpPage extends StatelessWidget {
             passwordInput(),
             ageInput(),
             submitButton(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const Text("Already user?"),
+                TextButton(
+                  onPressed: () => Navigator.pushNamed(context, '/sign-in'),
+                  child: Text("Sign In"),
+                ),
+              ],
+            ),
           ],
         ),
       );

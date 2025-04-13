@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "861029778196",
+    "project_id": "fly-cation",
+    "storage_bucket": "fly-cation.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:861029778196:android:286527aab10632d02ef801",
+        "android_client_info": {
+          "package_name": "com.example.flycation"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDF_6GyrE8kERcDBhWabrcNBK5ro1YmS_k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:861029778196:android:5486df8fff003b462ef801",
+        "android_client_info": {
+          "package_name": "com.shabrina.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDF_6GyrE8kERcDBhWabrcNBK5ro1YmS_k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

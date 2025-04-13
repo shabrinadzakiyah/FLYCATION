@@ -6,13 +6,28 @@ import 'package:flycation/ui/pages/wallet_page.dart';
 import 'package:flycation/ui/pages/widgets/custom_buttom_navigation_item.dart';
 import '../../shared/theme.dart';
 
-class MainPages extends StatelessWidget {
+class MainPages extends StatefulWidget {
   const MainPages({super.key});
+
+  @override
+  State<MainPages> createState() => _MainPagesState();
+}
+
+class _MainPagesState extends State<MainPages> {
+  int selectedPage = 0;
 
   @override
   Widget build(BuildContext context) {
     Widget buildContent() {
-      return HomePage();
+      if (selectedPage == 0) {
+        return HomePage();
+      } else if (selectedPage == 1) {
+        return TransactionPage();
+      } else if (selectedPage == 2) {
+        return WalletPage();
+      } else {
+        return SettingPage();
+      }
     }
 
     Widget customBottomNavigation() {
@@ -35,16 +50,39 @@ class MainPages extends StatelessWidget {
             children: [
               CustomButtomNavigationItem(
                 imageUrl: 'assets/icon_home.png',
-                isSelected: true,
+                isSelected: selectedPage == 0,
+                onClick: () {
+                  setState(() {
+                    selectedPage = 0;
+                  });
+                },
               ),
               CustomButtomNavigationItem(
                 imageUrl: 'assets/icon_booking.png',
+                isSelected: selectedPage == 1,
+                onClick: () {
+                  setState(() {
+                    selectedPage = 1;
+                  });
+                },
               ),
               CustomButtomNavigationItem(
                 imageUrl: 'assets/icon_card.png',
+                isSelected: selectedPage == 2,
+                onClick: () {
+                  setState(() {
+                    selectedPage = 2;
+                  });
+                },
               ),
               CustomButtomNavigationItem(
+                isSelected: selectedPage == 3,
                 imageUrl: 'assets/icon_settings.png',
+                onClick: () {
+                  setState(() {
+                    selectedPage = 3;
+                  });
+                },
               ),
             ],
           ),

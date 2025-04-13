@@ -1,10 +1,53 @@
+import 'dart:async';
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flycation/services/user_services.dart';
 import 'package:flycation/shared/theme.dart';
 import 'package:flycation/ui/pages/widgets/destination_card.dart';
 import 'package:flycation/ui/pages/widgets/destination_tile.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  StreamSubscription<User?>? _authSubscription;
+  User? userDetail;
+
+  @override
+  void initState() {
+    super.initState();
+    // Menambahkan listener untuk authStateChanges
+    _authSubscription =
+        FirebaseAuth.instance.authStateChanges().listen((User? user) {
+      if (user == null) {
+        // Hanya navigasi jika saat ini tidak berada di halaman login
+        if (ModalRoute.of(context)?.settings.name != '/sign-in') {
+          Navigator.pushNamedAndRemoveUntil(
+              context, '/sign-in', (route) => false);
+        }
+      } else {
+        setState(() {
+          userDetail = user; // Menyimpan data pengguna
+        });
+        // Hanya navigasi jika saat ini tidak berada di halaman utama
+        if (ModalRoute.of(context)?.settings.name != '/main') {
+          Navigator.pushNamedAndRemoveUntil(context, '/main', (route) => false);
+        }
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    // Pastikan listener dihentikan ketika widget di-*dispose*
+    _authSubscription?.cancel();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +66,7 @@ class HomePage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "What's up,\nShabrina Dzakiyah",
+                    "What's up,\n${userDetail?.displayName ?? 'User'}",
                     style: blackTextStyle.copyWith(
                       fontSize: 24,
                       fontWeight: semiBold,
@@ -46,9 +89,13 @@ class HomePage extends StatelessWidget {
               height: 60,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                image: DecorationImage(
-                  image: AssetImage('assets/image_profilebina.jpg'),
-                ),
+                image: userDetail != null && userDetail?.photoURL != null
+                    ? DecorationImage(
+                        image: NetworkImage(userDetail!.photoURL!),
+                      )
+                    : const DecorationImage(
+                        image: AssetImage("assets/foto_profile.jpg"),
+                      ),
               ),
             ),
           ],

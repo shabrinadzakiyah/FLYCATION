@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flycation/shared/theme.dart';
 
 class CustomTextFormField extends StatelessWidget {
+  final TextEditingController? controller;
   final String title;
   final String hintText;
   final bool obsecureText;
 
   const CustomTextFormField({
     super.key,
+    this.controller,
     required this.title,
     required this.hintText,
     this.obsecureText = false,
@@ -26,6 +28,7 @@ class CustomTextFormField extends StatelessWidget {
           ),
           const SizedBox(height: 6),
           TextFormField(
+            controller: controller,
             cursorColor: kBlackColor,
             obscureText: obsecureText,
             decoration: InputDecoration(

@@ -1,0 +1,2 @@
+C:/Project saya/flycation/android/app/.cxx/Debug/4u6r2q2d/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Project saya/flycation/android/app/.cxx/Debug/4u6r2q2d/armeabi-v7a/CMakeFiles/rebuild_cache.dir
