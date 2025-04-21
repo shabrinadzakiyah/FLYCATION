@@ -1,32 +1,16 @@
-# FlyCation - Flight Booking Application
+# flycation
 
-### Description
-FlyCation is a mobile application for flight ticket booking that provides users with an easy way to book flights, view attractive destination promotions, and manage travel information. The app features a modern and intuitive user interface.
+A new Flutter project.
 
-### Application Preview
+## Getting Started
 
-![Splash Screen](assets/splash_screen.jpg)
-![Get Started Screen](assets/get_started.jpg)
-![Sign Up Screen](assets/sign_up.jpg)
-![Balance Screen](assets/balance.jpg)
-![Home Screen](assets/home1.jpg)
-![Home Screen](assets/home2.jpg)
-![Home Screen](assets/home3.jpg)
-![Detail Promo Screen](assets/promo.jpg)
-![About Screen](assets/about_pemesanan.jpg)
-![Reservation Screen](assets/reservation.jpg)
-![Detail Promo Screen](assets/promo.jpg)
-![Booking Screen](assets/booking.jpg)
-![Detail Booking Screen](assets/detail_booking.jpg)
+This project is a starting point for a Flutter application.
 
-### Installation
-1. Clone this repository
-2. Open the project in your preferred IDE.
-3. Run the following commands:
-   flutter pub get
-   flutter run
+A few resources to get you started if this is your first Flutter project:
 
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-
-
-
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.

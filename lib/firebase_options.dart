@@ -65,4 +65,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'fly-cation.firebasestorage.app',
     iosBundleId: 'com.example.flycation',
   );
+
 }
