@@ -19,9 +19,7 @@ class SucsessCheckoutPages extends StatelessWidget {
               margin: EdgeInsets.only(bottom: 80),
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage(
-                    'assets/image_sucsess.png',
-                  ),
+                  image: AssetImage('assets/newimagesuccess.png'),
                 ),
               ),
             ),
@@ -32,22 +30,20 @@ class SucsessCheckoutPages extends StatelessWidget {
                 fontWeight: semiBold,
               ),
             ),
-            SizedBox(
-              height: 10,
-            ),
+            SizedBox(height: 10),
             Text(
               'Ready to explore a whole new world of experiences?',
-              style: greyTextStyle.copyWith(
-                fontSize: 16,
-                fontWeight: light,
-              ),
+              style: greyTextStyle.copyWith(fontSize: 16, fontWeight: light),
               textAlign: TextAlign.center,
             ),
             CustomButton(
               title: 'Booking Saya',
               onPressed: () {
                 Navigator.pushNamedAndRemoveUntil(
-                    context, '/main', (route) => false);
+                  context,
+                  '/main',
+                  (route) => false,
+                );
               },
               width: 220,
               margin: EdgeInsets.only(top: 50),

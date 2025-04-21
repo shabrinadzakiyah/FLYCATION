@@ -20,9 +20,7 @@ class CheckoutPage extends StatelessWidget {
               margin: EdgeInsets.only(bottom: 10),
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage(
-                    'assets/image_checkout.png',
-                  ),
+                  image: AssetImage('assets/image_checkout.png'),
                 ),
               ),
             ),
@@ -41,9 +39,7 @@ class CheckoutPage extends StatelessWidget {
                     ),
                     Text(
                       'Tangerang',
-                      style: greenTextStyle.copyWith(
-                        fontWeight: light,
-                      ),
+                      style: greenTextStyle.copyWith(fontWeight: light),
                     ),
                   ],
                 ),
@@ -59,9 +55,7 @@ class CheckoutPage extends StatelessWidget {
                     ),
                     Text(
                       'Denpansar',
-                      style: greenTextStyle.copyWith(
-                        fontWeight: light,
-                      ),
+                      style: greenTextStyle.copyWith(fontWeight: light),
                     ),
                   ],
                 ),
@@ -75,10 +69,7 @@ class CheckoutPage extends StatelessWidget {
     Widget bookingDetails() {
       return Container(
         margin: EdgeInsets.only(top: 30),
-        padding: EdgeInsets.symmetric(
-          horizontal: 20,
-          vertical: 30,
-        ),
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(18),
           color: kWhiteColor,
@@ -97,9 +88,7 @@ class CheckoutPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(18),
                     image: DecorationImage(
                       fit: BoxFit.cover,
-                      image: AssetImage(
-                        'assets/image_destination2.png',
-                      ),
+                      image: AssetImage('assets/image_destination2.png'),
                     ),
                   ),
                 ),
@@ -114,14 +103,10 @@ class CheckoutPage extends StatelessWidget {
                           fontWeight: medium,
                         ),
                       ),
-                      SizedBox(
-                        height: 5,
-                      ),
+                      SizedBox(height: 5),
                       Text(
                         'Semarang',
-                        style: greyTextStyle.copyWith(
-                          fontWeight: light,
-                        ),
+                        style: greyTextStyle.copyWith(fontWeight: light),
                       ),
                     ],
                   ),
@@ -224,10 +209,7 @@ class CheckoutPage extends StatelessWidget {
     Widget paymentDetails() {
       return Container(
         margin: EdgeInsets.only(top: 30),
-        padding: EdgeInsets.symmetric(
-          horizontal: 20,
-          vertical: 30,
-        ),
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(18),
           color: kWhiteColor,
@@ -251,9 +233,7 @@ class CheckoutPage extends StatelessWidget {
                     height: 70,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: AssetImage(
-                          'assets/image_card.png',
-                        ),
+                        image: AssetImage('assets/image_card.png'),
                       ),
                     ),
                     child: Center(
@@ -266,9 +246,7 @@ class CheckoutPage extends StatelessWidget {
                             margin: EdgeInsets.only(right: 6),
                             decoration: BoxDecoration(
                               image: DecorationImage(
-                                image: AssetImage(
-                                  'assets/icon_plane.png',
-                                ),
+                                image: AssetImage('assets/iconplanbaru.png'),
                               ),
                             ),
                           ),
@@ -297,9 +275,7 @@ class CheckoutPage extends StatelessWidget {
                       ),
                       Text(
                         'Total saat ini',
-                        style: greyTextStyle.copyWith(
-                          fontWeight: light,
-                        ),
+                        style: greyTextStyle.copyWith(fontWeight: light),
                       ),
                     ],
                   ),
@@ -313,24 +289,20 @@ class CheckoutPage extends StatelessWidget {
 
     Widget payButton() {
       return CustomButton(
-          title: 'Bayar Sekarang',
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => SucsessCheckoutPages(),
-              ),
-            );
-          });
+        title: 'Bayar Sekarang',
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => SucsessCheckoutPages()),
+          );
+        },
+      );
     }
 
     Widget tacButton() {
       return Container(
         alignment: Alignment.center,
-        margin: const EdgeInsets.only(
-          top: 30,
-          bottom: 35,
-        ),
+        margin: const EdgeInsets.only(top: 30, bottom: 35),
         child: Text(
           'Terms and Conditions',
           style: greenTextStyle.copyWith(
@@ -345,9 +317,7 @@ class CheckoutPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: kBackgroundColor,
       body: ListView(
-        padding: EdgeInsets.symmetric(
-          horizontal: defaultMargin,
-        ),
+        padding: EdgeInsets.symmetric(horizontal: defaultMargin),
         children: [
           route(),
           bookingDetails(),

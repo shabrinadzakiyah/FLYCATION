@@ -28,7 +28,10 @@ class _SplashPageState extends State<SplashPage> {
 
     if (user == null) {
       Navigator.pushNamedAndRemoveUntil(
-          context, '/get-started', (route) => false);
+        context,
+        '/get-started',
+        (route) => false,
+      );
     } else {
       Navigator.pushNamedAndRemoveUntil(context, '/main', (route) => false);
     }
@@ -48,16 +51,13 @@ class _SplashPageState extends State<SplashPage> {
               margin: const EdgeInsets.only(bottom: 45),
               decoration: const BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/icon_plane.png'),
+                  image: AssetImage('assets/iconplanbaru.png'),
                 ),
               ),
             ),
             Text(
               'FLY CATION',
-              style: whiteTextStyle.copyWith(
-                fontSize: 32,
-                fontWeight: medium,
-              ),
+              style: whiteTextStyle.copyWith(fontSize: 32, fontWeight: medium),
             ),
           ],
         ),

@@ -16,10 +16,9 @@ class GetStartedPage extends StatelessWidget {
             height: double.infinity,
             decoration: BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage(
-                    'assets/image_get_started.png',
-                  ),
-                  fit: BoxFit.cover),
+                image: AssetImage('assets/image_get_started.png'),
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           Column(
@@ -32,15 +31,10 @@ class GetStartedPage extends StatelessWidget {
                   fontWeight: extraBold,
                 ),
               ),
-              SizedBox(
-                height: 10,
-              ),
+              SizedBox(height: 10),
               Text(
-                'Explore new world with us and let yourself get an amazing experiences',
-                style: blackTextStyle.copyWith(
-                  fontSize: 16,
-                  fontWeight: bold,
-                ),
+                'Join us to explore new worlds and create amazing memories',
+                style: blackTextStyle.copyWith(fontSize: 16, fontWeight: bold),
                 textAlign: TextAlign.center,
               ),
               CustomButton(
@@ -52,7 +46,7 @@ class GetStartedPage extends StatelessWidget {
                 },
               ),
             ],
-          )
+          ),
         ],
       ),
     );
